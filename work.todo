@@ -1,0 +1,106 @@
+To Do Tasks pclFramework:
+	Project:
+        ✔ Create Git compatible project @done (10/19/2023, 8:05:47 PM)
+        ✔ Create Arduino Library compatible project @done (10/19/2023, 8:05:53 PM)
+        ✔ Make the library core compilable @done (10/19/2023, 8:05:54 PM)
+        ☐ @low Make example projects
+        ☐ @high Make universal test cases
+	HWIOs:
+		✔ @high Create DI @done (10/19/2023, 8:10:56 PM)
+        ✔ @high Create AI @done (10/19/2023, 8:10:57 PM)
+        ✔ @high Create DO @done (10/19/2023, 8:10:59 PM)
+        ✔ @high Create AO(PWM) @done (10/19/2023, 8:11:00 PM)
+		☐ @medium Make commented documentation for them
+		☐ @high Test functionalty "DI"
+        ☐ @high Test functionalty "AI"
+        ☐ @high Test functionalty "DO"
+        ☐ @high Test functionalty "AO(PWM)"
+
+    VIRIO:
+        ☐ @high Create "ModbusMasterWriter"
+        ☐ @high Create "ModbusMasterReader"
+        ☐ @high Create "ModbusSlaveSetter"
+        ☐ @high Create "ModbusSlaveGetter"
+        ☐ @high Create "WebHTTPGetter"
+        ☐ @high Create "WebHTTPSendder"
+        ☐ @medium Make commented documentation for them
+        ☐ @high Test functionalty "ModbusMasterReader"
+        ☐ @high Test functionalty "ModbusMasterWriter"
+        ☐ @high Test functionalty "ModbusSlaveGetter"
+        ☐ @high Test functionalty "ModbusSlaveSetter"
+        ☐ @high Test functionalty "WebHTTPGetter"
+        ☐ @high Test functionalty "WebHTTPSendder"
+
+	Logical blocks:
+		✔ @high Create "AND" @done (10/19/2023, 8:10:49 PM)
+        ✔ @high Create "OR" @done (10/19/2023, 8:10:52 PM)
+        ☐ @high Create "Inverter"
+        ✔ @high Create "Counter" @done (10/19/2023, 8:11:09 PM)
+        ✔ @high Create "Selector" @done (10/19/2023, 8:11:10 PM)
+        ☐ @medium Make commented documentation for them
+        ✔ @high Test functionalty "AND" @done (10/19/2023, 8:46:22 PM)
+        ✔ @high Test functionalty "OR" @done (10/19/2023, 8:46:23 PM)
+        ☐ @high Test functionalty "Inverter"
+        ✔ @high Test functionalty "Counter" @done (10/19/2023, 8:46:24 PM)
+        ✔ @high Test functionalty "Selector" @done (10/19/2023, 8:46:25 PM)
+
+    Math blocks:
+        ☐ @high Create "ADD"
+        ☐ @high Create "SUB"
+        ☐ @high Create "MULTIPLY"
+        ☐ @high Create "DIVIDE"
+        ☐ @medium Create "ABSOLUTE"
+        ☐ @medium Create "LOGARITHM"
+        ☐ @medium Create "ROOT"
+        ☐ @medium Create "Math constans container block"
+        ☐ @medium Make commented documentation for them
+        ☐ @high Test functionalty "ADD"
+        ☐ @high Test functionalty "SUB"
+        ☐ @high Test functionalty "MULTIPLY"
+        ☐ @high Test functionalty "DIVIDE"
+        ☐ @medium Test functionalty "ABSOLUTE"
+        ☐ @medium Test functionalty "LOGARITHM"
+        ☐ @medium Test functionalty "ROOT"
+        ☐ @medium Test functionalty "Math constans container block"
+
+    Complex Math blocks:
+        ☐ @low Make "Custom assigner table"
+        ☐ @low Make "Range rescaler"
+        ☐ @low Make commented documentation for them
+        ☐ @low Test functionalty "Custom assigner table"
+        ☐ @low Test functionalty "Range rescaler"
+
+    Controller blocks:
+        ☐ @low Make "Advanced PID controller"
+        ☐ @low Make "Cascade controller"
+        ☐ @low Make "Termostat controller"
+        ☐ @low Make commented documentation for them
+        ☐ @low Test functionalty "Advanced PID controller"
+        ☐ @low Test functionalty "Cascade controller"
+        ☐ @low Test functionalty "Termostat controller"
+
+    Time(r)/Function-Generator blocks:
+        ☐ @low Make "Delay block" (small time) #delaying a digital pulse
+        ☐ @low Make "Timer block" (small time) #generate a pulse every round time
+        ☐ @low Make "Function Generator block" #it can generate common sine waves
+        ☐ @low Make commented documentation for them
+        ☐ @low Test functionalty "Delay block" (small time)
+        ☐ @low Test functionalty "Timer block" (small time)
+        ☐ @low Test functionalty "Function Generator block"
+
+    ModbusHandler Abstarction:
+        ☐ Implemented
+        ☐ Documented
+        ☐ Tested
+
+    WEBHTTP Abstarction:
+        ☐ Implemented
+        ☐ Documented
+        ☐ Tested
+
+	Publishing:
+		☐ Write README.md for the library
+        ☐ Write README.md for the library modules
+        ☐ Write README.md for the library blocks
+	Defects:
+		☐ @critical Modbus blocks are defected

@@ -22,12 +22,8 @@ void HWIO_Output_PWM::write()
 uint8_t HWIO_Output_PWM::run()
 {
   if (this->checkValidity())
-  {
     this->write();
-    return 0;
-  }
   else
-  {
     return 1;
-  }
+  return 0;
 }

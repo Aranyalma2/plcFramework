@@ -12,12 +12,8 @@ float HWIO_Input_Analog::input()
 uint8_t HWIO_Input_Analog::run()
 {
   if (this->checkValidity())
-  {
     outputs[0] = this->input();
-    return 0;
-  }
   else
-  {
     return 1;
-  }
+  return 0;
 }

@@ -34,7 +34,7 @@ To Do Tasks pclFramework:
 	Logical blocks:
 		✔ @high Create "AND" @done (10/19/2023, 8:10:49 PM)
         ✔ @high Create "OR" @done (10/19/2023, 8:10:52 PM)
-        ☐ @high Create "Inverter"
+        ✔ @high Create "Inverter" @done (10/19/2023, 9:58:55 PM)
         ✔ @high Create "Counter" @done (10/19/2023, 8:11:09 PM)
         ✔ @high Create "Selector" @done (10/19/2023, 8:11:10 PM)
         ☐ @medium Make commented documentation for them

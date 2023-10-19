@@ -34,7 +34,5 @@ uint8_t Logical_AND::run()
     return 0;
   }
   else
-  {
     return 1;
-  }
 }

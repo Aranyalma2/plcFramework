@@ -18,12 +18,8 @@ void HWIO_Output_Digital::write()
 uint8_t HWIO_Output_Digital::run()
 {
   if (this->checkValidity())
-  {
     this->write();
-    return 0;
-  }
   else
-  {
     return 1;
-  }
+  return 0;
 }

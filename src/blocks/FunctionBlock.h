@@ -79,6 +79,16 @@ public:
   }
 
   // If user set a const to the module input, store it as local const container and use that pointer in *inputs[id]
+  void setInput(uint8_t id, double value)
+  {
+    if (getInputsNumber() >= id)
+    {
+      inputConstants[id] = static_cast<float>(value);
+      inputs[id] = &inputConstants[id];
+    }
+  }
+
+  // If user set a const to the module input, store it as local const container and use that pointer in *inputs[id]
   // int cast float for pure function call
   void setInput(uint8_t id, int value)
   {
@@ -107,6 +117,19 @@ public:
       }
     }
     return true;
+  }
+
+  //Normalize all input value to 3 decimal point float
+  void normalizeInputs(){
+    for (uint8_t i = 0; i < inputSize; i++){
+      double tmp = static_cast<double>(*inputs[i]);
+      //Positive
+      if(tmp >= 0.0)
+        *inputs[i] = static_cast<float>(static_cast<int64_t>(tmp * 1000 + 0.5))/1000;
+      //Negative
+      else
+        *inputs[i] = static_cast<float>(static_cast<int64_t>(tmp * 1000 - 0.5))/1000;
+    }
   }
 
   // DEBUG MSG for dev purpose. Log inputs, outputs, constants

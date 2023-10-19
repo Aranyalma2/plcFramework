@@ -1,7 +1,7 @@
 #ifndef LOGICAL_SELECTOR_H
 #define LOGICAL_SELECTOR_H
 
-#include "FunctionBlock.h"
+#include "../FunctionBlock.h"
 /* Logical selector block select from 2 inputs by a selector value
  * Inputs:
  * - Select input 1

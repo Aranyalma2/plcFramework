@@ -132,6 +132,17 @@ public:
     }
   }
 
+  //Cast given float number to int by multiply it by 1000
+  int64_t castToInt64(float number){
+      //Positive
+      if(number >= 0.0)
+        return static_cast<int64_t>(static_cast<double>(number)*1000 - 0.5);
+      //Negative
+      else
+        return static_cast<int64_t>(static_cast<double>(number)*1000 - 0.5);
+    }
+  }
+
   // DEBUG MSG for dev purpose. Log inputs, outputs, constants
   void debug() {}
 

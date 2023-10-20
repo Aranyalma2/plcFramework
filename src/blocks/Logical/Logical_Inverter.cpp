@@ -4,20 +4,18 @@ Logical_Inverter::Logical_Inverter(uint16_t unique_id) : FunctionBlock(unique_id
 {
 }
 
-float Logical_Inverter::inverter(float in)
+float Logical_Inverter::inverter()
 {
   // output is inverted
-  if (static_cast<int32_t>(in) == 0)
-    return static_cast<float>(1);
-  else
-    return static_cast<float>(0);
+  return static_cast<float>(!this->castToLogical(*inputs[0]));
+
 }
 
 uint8_t Logical_Inverter::run()
 {
   if (this->checkValidity())
   {
-    outputs[0] = this->inverter(*inputs[0]);
+    outputs[0] = this->inverter();
     return 0;
   }
   else

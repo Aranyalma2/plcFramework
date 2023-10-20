@@ -140,7 +140,14 @@ public:
       //Negative
       else
         return static_cast<int64_t>(static_cast<double>(number)*1000 - 0.5);
-    }
+  }
+
+  //Convert float to 0 OR 1 if value is NOT 0 it will became 1
+  uint8_t castToLogical(float number){
+    if(number > 0.0 || number < 0.0)
+      return 1;
+    else
+      return 0;
   }
 
   // DEBUG MSG for dev purpose. Log inputs, outputs, constants

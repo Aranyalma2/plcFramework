@@ -6,14 +6,7 @@ Logical_AND::Logical_AND(uint16_t unique_id) : FunctionBlock(unique_id, inputs, 
 
 float Logical_AND::And()
 {
-  if (*inputs[0] > static_cast<float>(0) && *inputs[1] > static_cast<float>(0))
-  {
-    return static_cast<float>(1);
-  }
-  else
-  {
-    return static_cast<float>(0);
-  }
+  return static_cast<float>(this->castToLogical(*inputs[0]) && this->castToLogical(*inputs[1]));
 }
 
 float Logical_AND::inverter(float in)

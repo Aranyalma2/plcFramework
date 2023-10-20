@@ -17,7 +17,7 @@ private:
   float inputConstants[1];
   float outputs[1];
 
-  float inverter(float in);
+  float inverter();
 
 public:
   Logical_Inverter(uint16_t unique_id = 0);

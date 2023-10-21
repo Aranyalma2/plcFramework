@@ -4,7 +4,7 @@ To Do Tasks pclFramework:
         ✔ Create Arduino Library compatible project @done (10/19/2023, 8:05:53 PM)
         ✔ Make the library core compilable @done (10/19/2023, 8:05:54 PM)
         ☐ @low Make example projects
-        ☐ @high Make universal test cases
+        ☐ @high Make universal test library for blocks
 	HWIOs:
 		✔ @high Create DI @done (10/19/2023, 8:10:56 PM)
         ✔ @high Create AI @done (10/19/2023, 8:10:57 PM)

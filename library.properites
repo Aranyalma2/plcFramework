@@ -1,0 +1,10 @@
+name=plcFramework
+version=0.0.1
+author=Nemeth Balint
+maintainer=Nemeth Balint
+sentence=Framework library for build program by block-based programing.
+paragraph=Mostly contains controller, mathematical, basic data handle and industrial communication protocol supporter blocks. Use for build programs for industrial automation purpuses. Like an embed plc. 
+category=Communication, Signal Input/Output, Sensors, Device Control, Timing, Data Processing, Other
+url=https://github.com/Aranyalma2/plcFramwork
+architectures=*
+includes=plcFramework.h

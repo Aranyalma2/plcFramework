@@ -5,21 +5,23 @@
 
 /* Logical Counter input detaction high to low or low to high with start and way controlling.
  * Inputs:
- * - input value 0/1 pulse
- * - input detaction mode (low to high or high to low)
- * - counter start number
- * - count way (up or down) 1/-1
- * - reset value 0/1 pulse
- * - reset detaction mode (low to high or high to low)
+ *  0 - input value 0/1 pulse
+ *  1 - input detaction mode (low to high or high to low)
+ *  2 - counter start number
+ *  3 - count way (up or down) 1/-1
+ *  4 - reset value 0/1 pulse
+ *  5 - reset detaction mode (low to high or high to low)
  */
 
-Logical_Counter::Logical_Counter(uint16_t unique_id) : FunctionBlock(unique_id, inputs, inputConstants, INPUT_LENGTH, outputs, OUTPUT_LENGTH) {}
+Logical_Counter::Logical_Counter(uint16_t unique_id) : FunctionBlock(unique_id, inputs, inputConstants, INPUT_LENGTH, outputs, OUTPUT_LENGTH)
+{
+  outputs[0] = *inputs[2];
+}
 
 float Logical_Counter::counter()
 {
-  uint8_t inputState = static_cast<uint8_t>(*inputs[0]);
-  inputState = static_cast<uint8_t>(inputState > 0);
-  uint8_t inputDetactionMode = static_cast<uint8_t>(*inputs[1]);
+  uint8_t inputState = this->castToLogical(*inputs[0]);
+  uint8_t inputDetactionMode = this->castToLogical(*inputs[1]);
   // Check if the input value has changed since last time
   if (inputState != lastInput)
   {
@@ -42,9 +44,8 @@ float Logical_Counter::counter()
   }
 
   // reset check
-  uint8_t resetState = static_cast<uint8_t>(*inputs[4]);
-  resetState = static_cast<uint8_t>(resetState > 0);
-  uint8_t resetDetactionMode = static_cast<uint8_t>(*inputs[5]);
+  uint8_t resetState = this->castToLogical(*inputs[4]);
+  uint8_t resetDetactionMode = this->castToLogical(*inputs[5]);
   if (resetState != lastReset)
   {
     if (resetDetactionMode == 1)

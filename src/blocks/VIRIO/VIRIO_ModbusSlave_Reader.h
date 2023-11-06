@@ -14,8 +14,8 @@
 class VIRIO_ModbusSlave_Reader : public FunctionBlock
 {
 private:
-  const uint8_t INPUT_LENGTH = 4;
-  const uint8_t OUTPUT_LENGTH = 0;
+  static const uint8_t INPUT_LENGTH = 4;
+  static const uint8_t OUTPUT_LENGTH = 0;
   float *inputs[4];
   float inputConstants[4];
   float outputs[0];

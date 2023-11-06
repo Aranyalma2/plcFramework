@@ -15,8 +15,8 @@ HWIO_Input
 class HWIO_Output_PWM : public FunctionBlock
 {
 private:
-  const uint8_t INPUT_LENGTH = 4;
-  const uint8_t OUTPUT_LENGTH = 0;
+  static const uint8_t INPUT_LENGTH = 4;
+  static const uint8_t OUTPUT_LENGTH = 0;
   float *inputs[4] = {nullptr};
   float inputConstants[4];
   float outputs[0];

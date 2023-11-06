@@ -4,7 +4,6 @@
 AND_Tester t1;
 AND_Tester t2;
 AND_Tester t3;
-Logical_AND t[5500];
 
 void setup()
 {

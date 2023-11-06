@@ -11,8 +11,8 @@ Output the read value 0-1023
 class HWIO_Output_Digital : public FunctionBlock
 {
 private:
-  const uint8_t INPUT_LENGTH = 1;
-  const uint8_t OUTPUT_LENGTH = 0;
+  static const uint8_t INPUT_LENGTH = 1;
+  static const uint8_t OUTPUT_LENGTH = 0;
   float *inputs[1] = {nullptr};
   float inputConstants[1];
   float outputs[0];

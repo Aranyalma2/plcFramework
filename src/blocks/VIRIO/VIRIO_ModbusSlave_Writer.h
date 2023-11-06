@@ -13,8 +13,8 @@
 class VIRIO_ModbusSlave_Writer : public FunctionBlock
 {
 private:
-  const uint8_t INPUT_LENGTH = 3;
-  const uint8_t OUTPUT_LENGTH = 1;
+  static const uint8_t INPUT_LENGTH = 3;
+  static const uint8_t OUTPUT_LENGTH = 1;
   float *inputs[3];
   float inputConstants[3];
   float outputs[1];

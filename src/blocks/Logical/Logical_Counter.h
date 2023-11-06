@@ -15,8 +15,8 @@
 class Logical_Counter : public FunctionBlock
 {
 private:
-  const uint8_t INPUT_LENGTH = 7;
-  const uint8_t OUTPUT_LENGTH = 1;
+  static const uint8_t INPUT_LENGTH = 7;
+  static const uint8_t OUTPUT_LENGTH = 1;
   float *inputs[7] = {nullptr};
   float inputConstants[7];
   float outputs[1];

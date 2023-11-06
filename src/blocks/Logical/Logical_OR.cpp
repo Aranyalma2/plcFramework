@@ -1,5 +1,7 @@
 #include "Logical_OR.h"
 
+Logical_OR::Logical_OR(uint16_t unique_id) : FunctionBlock(unique_id, inputs, inputConstants, INPUT_LENGTH, outputs, OUTPUT_LENGTH) {}
+
 float Logical_OR::Or()
 {
   return static_cast<float>(this->castToLogical(*inputs[0]) || this->castToLogical(*inputs[1]));

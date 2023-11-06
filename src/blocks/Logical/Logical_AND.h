@@ -10,15 +10,11 @@
  * - inverted output
  */
 
-namespace
-{
-  const uint8_t INPUT_LENGTH = 2;
-  const uint8_t OUTPUT_LENGTH = 2;
-}
-
 class Logical_AND : public FunctionBlock
 {
 private:
+  static const uint8_t INPUT_LENGTH = 2;
+  static const uint8_t OUTPUT_LENGTH = 2;
   float *inputs[2] = {nullptr};
   float inputConstants[2];
   float outputs[2];
@@ -27,9 +23,7 @@ private:
   float inverter(float in);
 
 public:
-  Logical_AND(uint16_t unique_id = 0) : FunctionBlock(unique_id, inputs, inputConstants, INPUT_LENGTH, outputs, OUTPUT_LENGTH)
-  {
-  }
+  Logical_AND(uint16_t unique_id = 0);
 
   virtual uint8_t run() override;
 };

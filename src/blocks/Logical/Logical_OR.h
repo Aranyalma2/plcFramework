@@ -22,7 +22,9 @@ private:
   float inverter(float in);
 
 public:
-  Logical_OR(uint16_t unique_id = 0);
+  Logical_OR(uint16_t unique_id = 0) : FunctionBlock(unique_id, inputs, inputConstants, INPUT_LENGTH, outputs, OUTPUT_LENGTH)
+  {
+  }
 
   virtual uint8_t run() override;
 };

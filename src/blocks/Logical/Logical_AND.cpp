@@ -1,9 +1,5 @@
 #include "Logical_AND.h"
 
-Logical_AND::Logical_AND(uint16_t unique_id) : FunctionBlock(unique_id, inputs, inputConstants, INPUT_LENGTH, outputs, OUTPUT_LENGTH)
-{
-}
-
 float Logical_AND::And()
 {
   return static_cast<float>(this->castToLogical(*inputs[0]) && this->castToLogical(*inputs[1]));

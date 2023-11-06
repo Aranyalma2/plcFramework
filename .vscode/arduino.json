@@ -1,6 +1,6 @@
 {
-    "configuration": "cpu=atmega328old",
-    "board": "arduino:avr:nano",
-    "sketch": "plcframwork.ino",
-    "port": "COM2"
+    "configuration": "CDCOnBoot=default,PartitionScheme=default,CPUFreq=160,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,DebugLevel=none",
+    "board": "esp32:esp32:esp32c3",
+    "sketch": "plcFramework.ino",
+    "port": "COM3"
 }

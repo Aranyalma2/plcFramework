@@ -16,8 +16,8 @@ private:
   static const uint8_t INPUT_LENGTH = 3;
   static const uint8_t OUTPUT_LENGTH = 1;
   float *inputs[3] = {nullptr};
-  float inputConstants[3];
-  float outputs[1];
+  float inputConstants[3] = {0};
+  float outputs[1] = {0};
 
   float select();
 

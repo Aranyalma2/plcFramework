@@ -16,8 +16,8 @@ private:
   static const uint8_t INPUT_LENGTH = 2;
   static const uint8_t OUTPUT_LENGTH = 2;
   float *inputs[2] = {nullptr};
-  float inputConstants[2];
-  float outputs[2];
+  float inputConstants[2] = {0};
+  float outputs[2] = {0};
 
   float And();
   float inverter(float in);

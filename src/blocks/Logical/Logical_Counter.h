@@ -15,14 +15,15 @@
 class Logical_Counter : public FunctionBlock
 {
 private:
-  static const uint8_t INPUT_LENGTH = 7;
+  static const uint8_t INPUT_LENGTH = 6;
   static const uint8_t OUTPUT_LENGTH = 1;
-  float *inputs[7] = {nullptr};
-  float inputConstants[7];
-  float outputs[1];
+  float *inputs[6] = {nullptr};
+  float inputConstants[6] = {0};
+  float outputs[1] = {0};
 
   uint8_t lastInput = 0;
   uint8_t lastReset = 0;
+  uint8_t firstRun = 1;
   float counter();
 
 public:

@@ -3,5 +3,6 @@
 
 #include "blockTesters/AND_Tester.h"
 #include "blockTesters/OR_Tester.h"
+#include "blockTesters/Counter_Tester.h"
 
 #endif // __BLOCKTEST_H__

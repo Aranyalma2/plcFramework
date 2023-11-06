@@ -1,8 +1,5 @@
 #include "Logical_Counter.h"
 
-#define INPUT_LENGTH 7
-#define OUTPUT_LENGTH 1
-
 /* Logical Counter input detaction high to low or low to high with start and way controlling.
  * Inputs:
  *  0 - input value 0/1 pulse
@@ -13,15 +10,32 @@
  *  5 - reset detaction mode (low to high or high to low)
  */
 
-Logical_Counter::Logical_Counter(uint16_t unique_id) : FunctionBlock(unique_id, inputs, inputConstants, INPUT_LENGTH, outputs, OUTPUT_LENGTH)
-{
-  outputs[0] = *inputs[2];
-}
+Logical_Counter::Logical_Counter(uint16_t unique_id) : FunctionBlock(unique_id, inputs, inputConstants, INPUT_LENGTH, outputs, OUTPUT_LENGTH) {}
 
 float Logical_Counter::counter()
 {
   uint8_t inputState = this->castToLogical(*inputs[0]);
   uint8_t inputDetactionMode = this->castToLogical(*inputs[1]);
+
+  uint8_t resetState = this->castToLogical(*inputs[4]);
+  uint8_t resetDetactionMode = this->castToLogical(*inputs[5]);
+
+  if (firstRun)
+  {
+    // defaut value
+    outputs[0] = *inputs[2];
+    // work mode change last states to inverse
+    if (inputDetactionMode == 1)
+    {
+      lastInput = 1;
+    }
+    if (resetDetactionMode == 1)
+    {
+      lastReset = 1;
+    }
+    firstRun = 0;
+  }
+
   // Check if the input value has changed since last time
   if (inputState != lastInput)
   {
@@ -30,6 +44,7 @@ float Logical_Counter::counter()
     { // High to low
       if (inputState == 0 && lastInput == 1)
       {
+        lastInput = inputState;
         return outputs[0] + *inputs[3];
       }
     }
@@ -37,6 +52,7 @@ float Logical_Counter::counter()
     { // Low to high
       if (inputState == 1 && lastInput == 0)
       {
+        lastInput = inputState;
         return outputs[0] + *inputs[3];
       }
     }
@@ -44,14 +60,13 @@ float Logical_Counter::counter()
   }
 
   // reset check
-  uint8_t resetState = this->castToLogical(*inputs[4]);
-  uint8_t resetDetactionMode = this->castToLogical(*inputs[5]);
   if (resetState != lastReset)
   {
     if (resetDetactionMode == 1)
     { // High to low
       if (lastReset == 1 && resetState == 0)
       {
+        lastReset = resetState;
         return *inputs[2];
       }
     }
@@ -59,11 +74,12 @@ float Logical_Counter::counter()
     { // Low to high
       if (lastReset == 0 && resetState == 1)
       {
+        lastReset = resetState;
         return *inputs[2];
       }
     }
+    lastInput = inputState;
   }
-  lastReset = resetState;
 
   return outputs[0];
 }

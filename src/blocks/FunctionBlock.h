@@ -116,35 +116,40 @@ public:
         return false;
       }
     }
+    normalizeInputs();
     return true;
   }
 
-  //Normalize all input value to 3 decimal point float
-  void normalizeInputs(){
-    for (uint8_t i = 0; i < inputSize; i++){
+  // Normalize all input value to 3 decimal point float
+  void normalizeInputs()
+  {
+    for (uint8_t i = 0; i < inputSize; i++)
+    {
       double tmp = static_cast<double>(*inputs[i]);
-      //Positive
-      if(tmp >= 0.0)
-        *inputs[i] = static_cast<float>(static_cast<int64_t>(tmp * 1000 + 0.5))/1000;
-      //Negative
+      // Positive
+      if (tmp >= 0.0)
+        *inputs[i] = static_cast<float>(static_cast<int64_t>(tmp * 1000 + 0.5)) / 1000;
+      // Negative
       else
-        *inputs[i] = static_cast<float>(static_cast<int64_t>(tmp * 1000 - 0.5))/1000;
+        *inputs[i] = static_cast<float>(static_cast<int64_t>(tmp * 1000 - 0.5)) / 1000;
     }
   }
 
-  //Cast given float number to int by multiply it by 1000
-  int64_t castToInt64(float number){
-      //Positive
-      if(number >= 0.0)
-        return static_cast<int64_t>(static_cast<double>(number)*1000 - 0.5);
-      //Negative
-      else
-        return static_cast<int64_t>(static_cast<double>(number)*1000 - 0.5);
+  // Cast given float number to int by multiply it by 1000
+  int64_t castToInt64(float number)
+  {
+    // Positive
+    if (number >= 0.0)
+      return static_cast<int64_t>(static_cast<double>(number) * 1000 - 0.5);
+    // Negative
+    else
+      return static_cast<int64_t>(static_cast<double>(number) * 1000 - 0.5);
   }
 
-  //Convert float to 0 OR 1 if value is NOT 0 it will became 1
-  uint8_t castToLogical(float number){
-    if(number > 0.0 || number < 0.0)
+  // Convert float to 0 OR 1 if value is NOT 0 it will became 1
+  uint8_t castToLogical(float number)
+  {
+    if (number > 0.0 || number < 0.0)
       return 1;
     else
       return 0;

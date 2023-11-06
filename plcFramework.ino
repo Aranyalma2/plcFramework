@@ -2,8 +2,7 @@
 #include "tests/Blocktest.h"
 
 AND_Tester t1;
-AND_Tester t2;
-AND_Tester t3;
+OR_Tester t2;
 
 void setup()
 {
@@ -12,7 +11,6 @@ void setup()
   Serial.println("Start");
   Serial.println(t1.test());
   Serial.println(t2.test());
-  Serial.println(t3.test());
 }
 
 void loop() {}

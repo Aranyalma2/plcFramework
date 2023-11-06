@@ -44,11 +44,10 @@ class AND_Tester : public FunctionBlockTest
   }
 
 public:
-  AND_Tester() : FunctionBlockTest(number_of_tests, testFunctions) {}
-
-public:
+  AND_Tester() : FunctionBlockTest() {}
   String test()
   {
+    setTests(number_of_tests, testFunctions);
     return FunctionBlockTest::runTests("Logical_AND");
   }
 };

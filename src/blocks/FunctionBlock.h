@@ -110,9 +110,9 @@ public:
   // check block validity, all input is valid
   bool checkValidity()
   {
-    Serial.println("----");
-    Serial.println(inputSize);
-    Serial.println("----");
+    // Serial.println("----");
+    // Serial.println(inputSize);
+    // Serial.println("----");
     for (uint8_t i = 0; i < inputSize; i++)
     {
       Serial.println(*inputs[i]);

@@ -2,6 +2,7 @@
 #define VIRIO_MODBUSSLAVE_READER_H
 
 #include "../FunctionBlock.h"
+#include "../../HWInterfaces/SerialInterface.h"
 
 /* Modbus Interface module, OUT interface
  * Inputs:
@@ -10,8 +11,6 @@
  * - Data to expose out from flow to modbus
  * - Multiplier
  */
-
-#include "../../HWInterfaces/SerialInterface.h"
 
 class VIRIO_ModbusSlave_Out : public FunctionBlock
 {

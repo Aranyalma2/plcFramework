@@ -2,7 +2,6 @@
 #define __MODBUSRTUSLAVE_H__
 
 #include "SerialInterface.h"
-#include "../blocks/FunctionBlock.h"
 
 class ModbusRTUSlave : public SerialInterface
 {
@@ -44,7 +43,7 @@ private:
   boolean coilWrite(unsigned int address, boolean value) { return 0; }
   int8_t discreteInputRead(uint16_t address) { return 0; }
   long holdingRegisterRead(uint16_t address);
-  boolean holdingRegisterWrite(word address, word value) { return 0; }
+  boolean holdingRegisterWrite(word address, word value);
   long inputRegisterRead(word address) { return 0; }
 
   bool firstRun = true;

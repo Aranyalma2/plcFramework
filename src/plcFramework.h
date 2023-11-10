@@ -13,7 +13,7 @@
 #include "blocks/HWIO/HWIO_Output_Digital.h"
 #include "blocks/HWIO/HWIO_Output_PWM.h"
 #include "blocks/VIRIO/VIRIO_ModbusSlave_Out.h"
-#include "blocks/VIRIO/VIRIO_ModbusSlave_Writer.h"
+#include "blocks/VIRIO/VIRIO_ModbusSlave_In.h"
 #include "blocks/Logical/Logical_AND.h"
 #include "blocks/Logical/Logical_Counter.h"
 #include "blocks/Logical/Logical_OR.h"

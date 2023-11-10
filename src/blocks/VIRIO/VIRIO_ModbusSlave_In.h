@@ -2,6 +2,7 @@
 #define __VIRIO_MODBUSSLAVE_WRITER_H__
 
 #include "../FunctionBlock.h"
+#include "../../HWInterfaces/SerialInterface.h"
 
 /* Modbus Interface module, IN interface
  * Inputs:
@@ -10,7 +11,7 @@
  * - Multiplier
  */
 
-class VIRIO_ModbusSlave_Writer : public FunctionBlock
+class VIRIO_ModbusSlave_In : public FunctionBlock
 {
 private:
   static const uint8_t INPUT_LENGTH = 3;
@@ -19,10 +20,14 @@ private:
   float inputConstants[3];
   float outputs[1];
 
+  SerialInterface *interface;
+
+  bool firstRun = true;
+
   void read();
 
 public:
-  VIRIO_ModbusSlave_Writer(uint16_t unique_id = 0);
+  VIRIO_ModbusSlave_In(uint16_t unique_id, SerialInterface *connecedtIf);
 
   virtual uint8_t run() override;
 };

@@ -40,7 +40,6 @@ public:
   {
     outputBlocks[idxOutput] = block;
     idxOutput++;
-    Serial.println("OutAdded");
   }
 
   bool initFinished()
@@ -50,7 +49,6 @@ public:
       inputBlocks = new FunctionBlock *[numberOfInput];
       outputBlocks = new FunctionBlock *[numberOfOutput];
       firstRun = false;
-      Serial.println("Dynamic reved");
       return false;
     }
     else if (idxInput != numberOfInput && idxOutput != numberOfOutput)

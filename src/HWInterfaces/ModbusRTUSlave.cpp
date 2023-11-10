@@ -21,7 +21,6 @@ void ModbusRTUSlave::run()
     firstRun = false;
     return;
   }
-  Serial.println("NO poll");
 }
 
 void ModbusRTUSlave::begin(uint8_t config)
@@ -328,17 +327,30 @@ uint16_t ModbusRTUSlave::_bytesToWord(uint8_t high, uint8_t low)
   return (high << 8) | low;
 }
 
-// Function to read a holding register
+// Function to readout a value by holding register
 long ModbusRTUSlave::holdingRegisterRead(uint16_t address)
 {
-  digitalWrite(13, 1);
-
-  return numberOfOutput;
   for (uint16_t i = 0; i < numberOfOutput; i++)
   {
     if (*(outputBlocks[i]->getInputs()[0]) == address && *(outputBlocks[i]->getInputs()[1]) == 3)
       return static_cast<int16_t>((*(outputBlocks[i]->getInputs()[2])) * (*(outputBlocks[i]->getInputs()[3])));
   }
 
-  return 99;
+  return 0;
+}
+
+// Function to write in a value by holding register
+boolean ModbusRTUSlave::holdingRegisterWrite(word address, word value)
+{
+  {
+    for (uint16_t i = 0; i < numberOfInput; i++)
+    {
+      if (*(inputBlocks[i]->getInputs()[0]) == address && *(inputBlocks[i]->getInputs()[1]) == 3)
+      {
+        (*(inputBlocks[i]->getOutput())) = static_cast<float>(value) * (*(inputBlocks[i]->getInputs()[2]));
+        return true;
+      }
+    }
+    return false;
+  }
 }

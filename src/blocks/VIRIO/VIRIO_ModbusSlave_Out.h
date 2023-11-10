@@ -7,11 +7,13 @@
  * Inputs:
  * - Modbus address
  * - Function Code
- * - Data to write out from flow to modbus
+ * - Data to expose out from flow to modbus
  * - Multiplier
  */
 
-class VIRIO_ModbusSlave_Reader : public FunctionBlock
+#include "../../HWInterfaces/SerialInterface.h"
+
+class VIRIO_ModbusSlave_Out : public FunctionBlock
 {
 private:
   static const uint8_t INPUT_LENGTH = 4;
@@ -19,11 +21,14 @@ private:
   float *inputs[4];
   float inputConstants[4];
   float outputs[0];
+  SerialInterface *interface;
+
+  bool firstRun = true;
 
   void write();
 
 public:
-  VIRIO_ModbusSlave_Reader(uint16_t unique_id = 0);
+  VIRIO_ModbusSlave_Out(uint16_t unique_id, SerialInterface *connecedtIf);
 
   virtual uint8_t run() override;
 };

@@ -30,6 +30,7 @@ protected:
 public:
   FunctionBlock(const uint16_t _unique_id, float **_inputs, float *_inputConstants, uint8_t inputLength, float *_outputs, uint8_t outputLength)
   {
+    Serial.println(inputSize);
     unique_id = _unique_id;
 
     inputs = _inputs;
@@ -109,12 +110,12 @@ public:
   // check block validity, all input is valid
   bool checkValidity()
   {
-    // Serial.println("----");
-    // Serial.println(inputSize);
-    // Serial.println("----");
+    Serial.println("----");
+    Serial.println(inputSize);
+    Serial.println("----");
     for (uint8_t i = 0; i < inputSize; i++)
     {
-      // Serial.println(*inputs[i]);
+      Serial.println(*inputs[i]);
       if (inputs[i] == nullptr)
       {
         // Serial.println("Invalid");

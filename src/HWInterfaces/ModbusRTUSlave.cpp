@@ -1,37 +1,51 @@
 #include "ModbusRTUSlave.h"
 
-ModbusRTUSlave::ModbusRTUSlave(Stream &serial, uint8_t *buf, uint16_t bufSize, uint8_t dePin, uint32_t responseDelay)
+ModbusRTUSlave::ModbusRTUSlave(uint8_t serialId, uint32_t baudrate, uint8_t slaveAddress, uint8_t dePin) : SerialInterface(serialId, baudrate)
 {
-  _serial = &serial;
-  _buf = buf;
-  _bufSize = bufSize;
+  _id = slaveAddress;
   _dePin = dePin;
-  _responseDelay = responseDelay;
+  _serial = SerialInterface::usedSerial;
 }
 
-void ModbusRTUSlave::begin(uint8_t id, uint32_t baud, uint8_t config)
+void ModbusRTUSlave::run()
 {
-  _id = id;
+  if (!firstRun)
+  {
+    ModbusRTUSlave::poll();
+    return;
+  }
+  else if (initFinished())
+  {
+    usedSerial->begin(baudrate);
+    ModbusRTUSlave::begin();
+    firstRun = false;
+    return;
+  }
+  Serial.println("NO poll");
+}
+
+void ModbusRTUSlave::begin(uint8_t config)
+{
   uint32_t startTime = micros();
-  if (baud > 19200)
+  if (baudrate > 19200)
   {
     _charTimeout = 750;
     _frameTimeout = 1750;
   }
   else if (config == 0x2E || config == 0x3E)
   {
-    _charTimeout = 18000000 / baud;
-    _frameTimeout = 42000000 / baud;
+    _charTimeout = 18000000 / baudrate;
+    _frameTimeout = 42000000 / baudrate;
   }
   else if (config == 0x0E || config == 0x26 || config == 0x36)
   {
-    _charTimeout = 16500000 / baud;
-    _frameTimeout = 38500000 / baud;
+    _charTimeout = 16500000 / baudrate;
+    _frameTimeout = 38500000 / baudrate;
   }
   else
   {
-    _charTimeout = 15000000 / baud;
-    _frameTimeout = 35000000 / baud;
+    _charTimeout = 15000000 / baudrate;
+    _frameTimeout = 35000000 / baudrate;
   }
   if (_dePin != 255)
   {
@@ -312,4 +326,19 @@ uint16_t ModbusRTUSlave::_div8RndUp(uint16_t value)
 uint16_t ModbusRTUSlave::_bytesToWord(uint8_t high, uint8_t low)
 {
   return (high << 8) | low;
+}
+
+// Function to read a holding register
+long ModbusRTUSlave::holdingRegisterRead(uint16_t address)
+{
+  digitalWrite(13, 1);
+
+  return numberOfOutput;
+  for (uint16_t i = 0; i < numberOfOutput; i++)
+  {
+    if (*(outputBlocks[i]->getInputs()[0]) == address && *(outputBlocks[i]->getInputs()[1]) == 3)
+      return static_cast<int16_t>((*(outputBlocks[i]->getInputs()[2])) * (*(outputBlocks[i]->getInputs()[3])));
+  }
+
+  return 99;
 }

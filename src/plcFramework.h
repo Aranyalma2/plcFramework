@@ -19,5 +19,6 @@
 #include "blocks/Logical/Logical_OR.h"
 #include "blocks/Logical/Logical_Selector.h"
 #include "blocks/Controller/Controller_PID.h"
+#include "blocks/Math/Math_Basic.h"
 
 #endif

@@ -18,5 +18,6 @@
 #include "blocks/Logical/Logical_Counter.h"
 #include "blocks/Logical/Logical_OR.h"
 #include "blocks/Logical/Logical_Selector.h"
+#include "blocks/Controller/Controller_PID.h"
 
 #endif

@@ -2,7 +2,7 @@
 #define __CONTROLLER_PID_H__
 
 #include "../FunctionBlock.h"
-/* Logical AND
+/* Controller PID
  * Inputs:
  * - Actual Value
  * - SetPoint

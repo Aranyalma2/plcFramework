@@ -4,7 +4,6 @@
 #include "../FunctionBlock.h"
 /*----------------------------------------------------------------
 Hardware Pin digital output block
-Output the read value 0-1023
 
 */
 

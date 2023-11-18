@@ -121,3 +121,53 @@ Opertion mode table_
 |  0  | Result  |
 
 ---
+
+### **Hardware programable IO**
+
+**_Analog Input_**
+
+> Description: Read the specified hardware input interface to read in data in analog format
+
+| ID  | Inputs       | Dynamic | Constans |    Range (Preferd)     |
+| :-: | ------------ | :-----: | :------: | :--------------------: |
+|  0  | Hardware pin |    -    |    X     | Any (Pre-Defined list) |
+
+| ID  | Outputs   |
+| :-: | --------- |
+|  0  | Read data |
+
+**_Digital Input_**
+
+> Description: Read the specified hardware input interface to read in data in digital format
+
+| ID  | Inputs       | Dynamic | Constans |    Range (Preferd)     |
+| :-: | ------------ | :-----: | :------: | :--------------------: |
+|  0  | Hardware pin |    -    |    X     | Any (Pre-Defined list) |
+
+| ID  | Outputs   |
+| :-: | --------- |
+|  0  | Read data |
+
+**_Analog Output_**
+
+> Description: Write pwm (analog) value to hardware pin
+
+| ID  | Inputs       | Dynamic | Constans |    Range (Preferd)     |
+| :-: | ------------ | :-----: | :------: | :--------------------: |
+|  0  | Hardware pin |    -    |    X     | Any (Pre-Defined list) |
+|  1  | PWM value    |    X    |    X     |       Any       |
+|  2  | Opertion mode |    X    |    X     |       Any       |
+
+| ID  | Outputs |
+| :-: | ------- |
+
+**_Digital Output_**
+
+> Description: Write digital value to hardware pin
+
+| ID  | Inputs       | Dynamic | Constans |    Range (Preferd)     |
+| :-: | ------------ | :-----: | :------: | :--------------------: |
+|  0  | Hardware pin |    -    |    X     | Any (Pre-Defined list) |
+
+| ID  | Outputs |
+| :-: | ------- |

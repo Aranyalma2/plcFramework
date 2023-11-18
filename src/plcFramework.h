@@ -17,6 +17,7 @@
 #include "blocks/Logical/Logical_AND.h"
 #include "blocks/Logical/Logical_Counter.h"
 #include "blocks/Logical/Logical_OR.h"
+#include "blocks/Logical/Logical_NOT.h"
 #include "blocks/Logical/Logical_Selector.h"
 #include "blocks/Controller/Controller_PID.h"
 #include "blocks/Math/Math_Basic.h"

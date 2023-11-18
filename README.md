@@ -19,9 +19,9 @@ C++ microcontroller library for universal block-base programming. Used by Szomor
 |  0  | Parameter1 |    X    |    X     |  Any (Binary)   |       0       |
 |  1  | Parameter2 |    X    |    X     |  Any (Binary)   |       0       |
 
-| ID  | Outputs         |
-| :-: | --------------- |
-|  0  | Result          |
+| ID  |     Outputs     |
+| :-: | :-------------: |
+|  0  |     Result      |
 |  1  | Inverted result |
 
 ---
@@ -35,9 +35,9 @@ C++ microcontroller library for universal block-base programming. Used by Szomor
 |  0  | Parameter1 |    X    |    X     |  Any (Binary)   |       0       |
 |  1  | Parameter2 |    X    |    X     |  Any (Binary)   |       0       |
 
-| ID  | Outputs         |
-| :-: | --------------- |
-|  0  | Result          |
+| ID  |     Outputs     |
+| :-: | :-------------: |
+|  0  |     Result      |
 |  1  | Inverted result |
 
 ---
@@ -51,7 +51,7 @@ C++ microcontroller library for universal block-base programming. Used by Szomor
 |  0  | Parameter1 |    X    |    X     |  Any (Binary)   |       0       |
 
 | ID  | Outputs |
-| :-: | ------- |
+| :-: | :-----: |
 |  0  | Result  |
 
 ---
@@ -67,7 +67,7 @@ C++ microcontroller library for universal block-base programming. Used by Szomor
 |  2  | Selection value |    X    |    X     |  Any (Binary)   |       0       |
 
 | ID  | Outputs |
-| :-: | ------- |
+| :-: | :-----: |
 |  0  | Result  |
 
 ---
@@ -90,7 +90,7 @@ Counting detaction mode value: 0: low to high; 1: high to low\
 Reset detaction mode value: 0: low to high; 1: high to low_
 
 | ID  | Outputs |
-| :-: | ------- |
+| :-: | :-----: |
 |  0  | Result  |
 
 ---
@@ -110,14 +110,14 @@ Reset detaction mode value: 0: low to high; 1: high to low_
 _Notes:\
 Opertion mode table_
 | Value | Operand |
-| :---: | -------- |
+| :---: | :-------: |
 | 0 | ADD |
 | 1 | SUBTRACT |
 | 2 | MULTIPLY |
 | 3 | DIVIDE |
 
 | ID  | Outputs |
-| :-: | ------- |
+| :-: | :-----: |
 |  0  | Result  |
 
 ---
@@ -142,7 +142,7 @@ Counting detaction mode value: 0: low to high; 1: high to low\
 Reset detaction mode value: 0: low to high; 1: high to low_
 
 | ID  | Outputs |
-| :-: | ------- |
+| :-: | :-----: |
 |  0  | Result  |
 
 ---
@@ -157,8 +157,8 @@ Reset detaction mode value: 0: low to high; 1: high to low_
 | :-: | ------------ | :-----: | :------: | :--------------------: | :--------------: |
 |  0  | Hardware pin |    -    |    X     | Any (Pre-Defined list) | Not user defined |
 
-| ID  | Outputs   |
-| :-: | --------- |
+| ID  |  Outputs  |
+| :-: | :-------: |
 |  0  | Read data |
 
 **_Digital Input_**
@@ -169,8 +169,8 @@ Reset detaction mode value: 0: low to high; 1: high to low_
 | :-: | ------------ | :-----: | :------: | :--------------------: | :--------------: |
 |  0  | Hardware pin |    -    |    X     | Any (Pre-Defined list) | Not user defined |
 
-| ID  | Outputs   |
-| :-: | --------- |
+| ID  |  Outputs  |
+| :-: | :-------: |
 |  0  | Read data |
 
 **_Analog Output_**
@@ -188,7 +188,8 @@ _Notes:
 The "Range minimum" and "Range maximum" refers to the value range of "PWM value"._
 
 | ID  | Outputs |
-| :-: | ------- |
+| :-: | :-----: |
+|  -  |    -    |
 
 **_Digital Output_**
 
@@ -199,4 +200,5 @@ The "Range minimum" and "Range maximum" refers to the value range of "PWM value"
 |  0  | Hardware pin |    -    |    X     | Any (Pre-Defined list) | Not user defined |
 
 | ID  | Outputs |
-| :-: | ------- |
+| :-: | :-----: |
+|  -  |    -    |

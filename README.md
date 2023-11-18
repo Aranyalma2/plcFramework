@@ -2,13 +2,13 @@
 
 C++ microcontroller library for universal block-base programming. Used by my WEB programmer and compiller module.
 
-## Block IOs
+## IOs of Blocks
 
 ---
 
 ### **Logical Blocks**
 
-<p>In the case of non-binary input values (where defined), a logical conversion takes place first [^1].<p>
+<p>In the case of non-binary input values (where defined), a logical conversion takes place first. (Everything that is exactly zero is 0. Anything else is 1)<p>
 
 **_AND/NAND_**
 
@@ -58,13 +58,13 @@ C++ microcontroller library for universal block-base programming. Used by my WEB
 
 **_SELECTOR_**
 
-> Description: The output gives the input values ​​fulfilled on the basis of the selective condition.
+> Description: The output gives the selected input value by selection value (0/1)
 
-| ID  | Inputs              | Dynamic | Constans | Range (Preferd) |
-| :-: | ------------------- | :-----: | :------: | :-------------: |
-|  0  | Parameter1          |    X    |    X     |       Any       |
-|  1  | Parameter2          |    X    |    X     |       Any       |
-|  2  | Selection condition |    X    |    X     |       Any       |
+| ID  | Inputs          | Dynamic | Constans | Range (Preferd) |
+| :-: | --------------- | :-----: | :------: | :-------------: |
+|  0  | Parameter1      |    X    |    X     |       Any       |
+|  1  | Parameter2      |    X    |    X     |       Any       |
+|  2  | Selection value |    X    |    X     |  Any (Binary)   |
 
 | ID  | Outputs |
 | :-: | ------- |
@@ -95,4 +95,29 @@ Reset detaction mode value: 0: low to high; 1: high to low_
 
 ---
 
-[^1]: Everything that is exactly zero is 0. Anything else is 1
+### **Math Blocks**
+
+**_BASIC MATH_**
+
+> Description: Performs the selected mathematical operation on the inputs and places it on the output
+
+| ID  | Inputs        | Dynamic | Constans | Range (Preferd) |
+| :-: | ------------- | :-----: | :------: | :-------------: |
+|  0  | Parameter1    |    X    |    X     |       Any       |
+|  1  | Parameter2    |    X    |    X     |       Any       |
+|  2  | Opertion mode |    X    |    X     |       Any       |
+
+_Notes:\
+Opertion mode table_
+| Value | Operand |
+| :---: | -------- |
+| 0 | ADD |
+| 1 | SUBTRACT |
+| 2 | MULTIPLY |
+| 3 | DIVIDE |
+
+| ID  | Outputs |
+| :-: | ------- |
+|  0  | Result  |
+
+---

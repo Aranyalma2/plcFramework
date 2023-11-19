@@ -109,12 +109,13 @@ Reset detection mode value: 0: low to high; 1: high to low_
 
 _Notes:\
 Operation mode table_
-| Value | Operand |
-| :---: | :-------: |
-| 0 | ADD |
-| 1 | SUBTRACT |
-| 2 | MULTIPLY |
-| 3 | DIVIDE |
+
+| Value | Operand  |
+| :---: | :------: |
+|   0   |   ADD    |
+|   1   | SUBTRACT |
+|   2   | MULTIPLY |
+|   3   |  DIVIDE  |
 
 | ID  | Outputs |
 | :-: | :-----: |

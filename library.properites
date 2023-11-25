@@ -1,5 +1,5 @@
 name=plcFramework
-version=0.0.1
+version=1.0.0
 author=Nemeth Balint
 maintainer=Nemeth Balint
 sentence=Framework library for build program by block-based programing.

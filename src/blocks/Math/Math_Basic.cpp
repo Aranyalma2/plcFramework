@@ -24,10 +24,16 @@ float Math_Basic::math()
   // DIVIDE
   case 3:
   {
+    if (*inputs[1] == 0.0)
+    {
+      return 0.0;
+    }
     return *inputs[0] / *inputs[1];
   }
   default:
-    0;
+  {
+    return 0.0;
+  }
   }
 }
 

@@ -18,6 +18,11 @@ float Controller_PID::pid()
   {
     return -(*inputs[2] * error + *inputs[3] * integral + *inputs[4] * derivative);
   }
+  else
+  {
+    // Never should happen
+    return 0.0;
+  }
 }
 
 uint8_t Controller_PID::run()

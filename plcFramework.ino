@@ -6,6 +6,8 @@ AND_Tester t1;
 OR_Tester t2;
 Counter_Tester t3;
 
+Math_Basic m1;
+
 ModbusRTUSlave s1(0, 115200, 1, 255);
 VIRIO_ModbusSlave_Out o1(0, &s1);
 VIRIO_ModbusSlave_In o2(0, &s1);

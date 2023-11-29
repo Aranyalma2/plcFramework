@@ -40,11 +40,11 @@
  * Example:
  *   ```
  *   Logical_AND andBlock(456);
- *   andBlock.inputs[0] = 1.0; // True
- *   andBlock.inputs[1] = 0.0; // False
+ *   andBlock.setInput(0, 1.0) // True
+ *   andBlock.setInput(1, 0.0) // False
  *   andBlock.run();
- *   float result = andBlock.outputs[0]; // Result will be 0.0 (False)
- *   float invertedResult = andBlock.outputs[1]; // Inverted result will be 1.0 (True)
+ *   float result = andBlock.getOutput(); // Result will be 0.0 (False)
+ *   float invertedResult = andBlock.getOutput(1); // Inverted result will be 1.0 (True)
  *   ```
  *
  */

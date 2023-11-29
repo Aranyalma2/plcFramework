@@ -110,18 +110,18 @@ Reset detection mode value: 0: low to high; 1: high to low_
 _Notes:\
 Operation mode table_
 
-| Value | Operand  |
-| :---: | :------: |
-|   0   |   Addition    |
-|   1   | Subtraction |
+| Value |    Operand     |
+| :---: | :------------: |
+|   0   |    Addition    |
+|   1   |  Subtraction   |
 |   2   | Multiplication |
-|   3   |  Division  |
-|   4   |   Absolute value    |
+|   3   |    Division    |
+|   4   | Absolute value |
 |   5   | Exponentiation |
-|   6   | NTH root |
-|   7   |  Logarithm  |
-|   8   |  Maximum  |
-|   9   |  Minimum  |
+|   6   |    NTH root    |
+|   7   |   Logarithm    |
+|   8   |    Maximum     |
+|   9   |    Minimum     |
 
 | ID  | Outputs |
 | :-: | :-----: |

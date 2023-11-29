@@ -112,10 +112,16 @@ Operation mode table_
 
 | Value | Operand  |
 | :---: | :------: |
-|   0   |   ADD    |
-|   1   | SUBTRACT |
-|   2   | MULTIPLY |
-|   3   |  DIVIDE  |
+|   0   |   Addition    |
+|   1   | Subtraction |
+|   2   | Multiplication |
+|   3   |  Division  |
+|   4   |   Absolute value    |
+|   5   | Exponentiation |
+|   6   | NTH root |
+|   7   |  Logarithm  |
+|   8   |  Maximum  |
+|   9   |  Minimum  |
 
 | ID  | Outputs |
 | :-: | :-----: |

@@ -1,6 +1,6 @@
-#include "Logical_Counter.h"
+#include "Logic_Counter.h"
 
-/* Logical Counter input detaction high to low or low to high with start and way controlling.
+/* Logic Counter input detaction high to low or low to high with start and way controlling.
  * Inputs:
  *  0 - input value 0/1 pulse
  *  1 - input detaction mode (low to high or high to low)
@@ -9,20 +9,20 @@
  *  4 - reset value 0/1 pulse
  *  5 - reset detaction mode (low to high or high to low)
  */
-#include "Logical_Counter.h"
+#include "Logic_Counter.h"
 
-// Constructor for Logical_Counter class
-Logical_Counter::Logical_Counter(uint16_t unique_id) : FunctionBlock(unique_id, inputs, inputConstants, INPUT_LENGTH, outputs, OUTPUT_LENGTH) {}
+// Constructor for Logic_Counter class
+Logic_Counter::Logic_Counter(uint16_t unique_id) : FunctionBlock(unique_id, inputs, inputConstants, INPUT_LENGTH, outputs, OUTPUT_LENGTH) {}
 
-// Perform the logical counting operation
-float Logical_Counter::counter()
+// Perform the Logic counting operation
+float Logic_Counter::counter()
 {
   // Extract logic values from input signals
-  uint8_t inputState = this->castToLogical(*inputs[0]);
-  uint8_t inputDetectionMode = this->castToLogical(*inputs[1]);
+  uint8_t inputState = this->castToLogic(*inputs[0]);
+  uint8_t inputDetectionMode = this->castToLogic(*inputs[1]);
 
-  uint8_t resetState = this->castToLogical(*inputs[4]);
-  uint8_t resetDetectionMode = this->castToLogical(*inputs[5]);
+  uint8_t resetState = this->castToLogic(*inputs[4]);
+  uint8_t resetDetectionMode = this->castToLogic(*inputs[5]);
 
   /*
     // Initialization on the first run
@@ -92,13 +92,13 @@ float Logical_Counter::counter()
   return outputs[0]; // Return the current counter value
 }
 
-// Run the Logical_Counter block
-uint8_t Logical_Counter::run()
+// Run the Logic_Counter block
+uint8_t Logic_Counter::run()
 {
   // Check if inputs are valid
   if (this->checkValidity())
   {
-    outputs[0] = this->counter(); // Execute the logical counting operation
+    outputs[0] = this->counter(); // Execute the Logic counting operation
     return 0;                     // Return success
   }
   else

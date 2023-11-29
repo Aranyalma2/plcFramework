@@ -154,7 +154,7 @@ public:
   }
 
   // Convert float to 0 OR 1 if value is NOT 0 it will became 1
-  uint8_t castToLogical(float number)
+  uint8_t castToLogic(float number)
   {
     if (number > 0.0 || number < 0.0)
       return 1;

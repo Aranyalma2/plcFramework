@@ -1,13 +1,13 @@
-#ifndef LOGICAL_COUNTER_H
-#define LOGICAL_COUNTER_H
+#ifndef Logic_COUNTER_H
+#define Logic_COUNTER_H
 
 #include "../FunctionBlock.h"
 
 /*
- * Logical_Counter - Function Block for Logical Counter count by pulse detection
+ * Logic_Counter - Function Block for Logic Counter count by pulse detection
  *
  * Description:
- * This class defines a Function Block, Logical_Counter, for counting pulses based on input parameter.
+ * This class defines a Function Block, Logic_Counter, for counting pulses based on input parameter.
  * It inherits from the FunctionBlock class and extends it by counting up or down edge of a pulse,
  * specifying the start number, controlling the counting direction and amount, reset by up or down edge of another pulse.
  *
@@ -27,23 +27,23 @@
  *   - OUTPUT_LENGTH: Number of output values (1 in this case)
  *   - inputs[6]: Array to store pointers to input values
  *   - inputConstants[6]: Array to store constant values (currently initialized to zero)
- *   - outputs[1]: Array to store the result of the logical counting operation
+ *   - outputs[1]: Array to store the result of the Logic counting operation
  *   - lastInput: Holds the last value of the input for detecting changes
  *   - lastReset: Holds the last value of the reset signal for detecting changes
  *   - firstRun: Flag indicating the first execution of the run function
  *
  * Member Functions:
- *   - Logical_Counter(uint16_t unique_id = 0): Constructor for Logical_Counter, initializes the object with a unique ID.
- *   - virtual uint8_t run() override: Executes the logical counting operation based on the input signals.
+ *   - Logic_Counter(uint16_t unique_id = 0): Constructor for Logic_Counter, initializes the object with a unique ID.
+ *   - virtual uint8_t run() override: Executes the Logic counting operation based on the input signals.
  *   - float counter(): Performs the counting operation based on input signals and updates the counter value.
  *
  * Usage:
- *   - Create an instance of Logical_Counter, set input values using inputs[], and call run() to perform
- *     the logical counting operation.
+ *   - Create an instance of Logic_Counter, set input values using inputs[], and call run() to perform
+ *     the Logic counting operation.
  *
  * Example:
  *   ```
- *   Logical_Counter counterBlock();
+ *   Logic_Counter counterBlock();
  *   counterBlock.setInput(0, 1.0); // Input pulse
  *   counterBlock.setInput(1, 1.0); // High to low transition detection
  *   counterBlock.setInput(2, 10.0); // Counter start number
@@ -60,7 +60,7 @@
  *
  */
 
-class Logical_Counter : public FunctionBlock
+class Logic_Counter : public FunctionBlock
 {
 private:
   static const uint8_t INPUT_LENGTH = 6;
@@ -75,7 +75,7 @@ private:
   float counter();
 
 public:
-  Logical_Counter(uint16_t unique_id = 0);
+  Logic_Counter(uint16_t unique_id = 0);
 
   virtual uint8_t run() override;
 };

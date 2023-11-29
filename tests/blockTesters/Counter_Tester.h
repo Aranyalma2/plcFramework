@@ -12,7 +12,7 @@ class Counter_Tester : public FunctionBlockTest
   static bool test1()
   {
     // test1 - init
-    Logical_Counter obj;
+    Logic_Counter obj;
     obj.setInput(0, 0);
     obj.setInput(1, 0);
     obj.setInput(2, 0);
@@ -25,7 +25,7 @@ class Counter_Tester : public FunctionBlockTest
   static bool test2()
   {
     // test 2 - High mode init+count1-2, and a false count
-    Logical_Counter obj;
+    Logic_Counter obj;
     obj.setInput(0, 0);
     obj.setInput(1, 0);
     obj.setInput(2, 0);
@@ -46,7 +46,7 @@ class Counter_Tester : public FunctionBlockTest
   static bool test3()
   {
     // test 3 - High mode init+start from 3 + sub 1+1 and a false count
-    Logical_Counter obj;
+    Logic_Counter obj;
     obj.setInput(0, 0);
     obj.setInput(1, 0);
     obj.setInput(2, 3);
@@ -67,7 +67,7 @@ class Counter_Tester : public FunctionBlockTest
   static bool test4()
   {
     // test 4 - LOW mode init+start from 3 + add 1+1
-    Logical_Counter obj;
+    Logic_Counter obj;
     obj.setInput(0, 0);
     obj.setInput(1, 1);
     obj.setInput(2, 3);
@@ -85,7 +85,7 @@ class Counter_Tester : public FunctionBlockTest
   static bool test5()
   {
     // test 5 - LOW mode init+start from 3 + add 3+3
-    Logical_Counter obj;
+    Logic_Counter obj;
     obj.setInput(0, 0);
     obj.setInput(1, 1);
     obj.setInput(2, 3);
@@ -103,7 +103,7 @@ class Counter_Tester : public FunctionBlockTest
   static bool test6()
   {
     // test 6 - reset test HIGH reset
-    Logical_Counter obj;
+    Logic_Counter obj;
     obj.setInput(0, 0);
     obj.setInput(1, 0);
     obj.setInput(2, 3);
@@ -121,7 +121,7 @@ class Counter_Tester : public FunctionBlockTest
   static bool test7()
   {
     // test 7 - reset test LOW reset
-    Logical_Counter obj;
+    Logic_Counter obj;
     obj.setInput(0, 0);
     obj.setInput(1, 0);
     obj.setInput(2, 3);
@@ -144,7 +144,7 @@ public:
   String test()
   {
     setTests(number_of_tests, testFunctions);
-    return FunctionBlockTest::runTests("Logical_Counter");
+    return FunctionBlockTest::runTests("Logic_Counter");
   }
 };
 

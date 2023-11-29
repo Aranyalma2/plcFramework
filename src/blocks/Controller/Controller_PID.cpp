@@ -15,12 +15,12 @@ float Controller_PID::pid()
   prevError = error;
 
   // Check the work mode (Direct or Reverse) and compute the PID controller output accordingly
-  if (this->castToLogical(*inputs[5]) == 0)
+  if (this->castToLogic(*inputs[5]) == 0)
   {
     // Direct mode
     return *inputs[2] * error + *inputs[3] * integral + *inputs[4] * derivative;
   }
-  else if (this->castToLogical(*inputs[5]) == 1)
+  else if (this->castToLogic(*inputs[5]) == 1)
   {
     // Reverse mode
     return -(*inputs[2] * error + *inputs[3] * integral + *inputs[4] * derivative);

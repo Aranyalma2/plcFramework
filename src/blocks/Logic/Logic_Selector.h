@@ -1,13 +1,13 @@
-#ifndef LOGICAL_SELECTOR_H
-#define LOGICAL_SELECTOR_H
+#ifndef Logic_SELECTOR_H
+#define Logic_SELECTOR_H
 
 #include "../FunctionBlock.h"
 
 /*
- * Logical_Selector - Function Block for Logical Selection
+ * Logic_Selector - Function Block for Logic Selection
  *
  * Description:
- * This class defines a Function Block, Logical_Selector, for selecting between two input values based on a selector value.
+ * This class defines a Function Block, Logic_Selector, for selecting between two input values based on a selector value.
  * It inherits from the FunctionBlock class and takes three input values, producing one output value.
  *
  * Inputs:
@@ -26,17 +26,17 @@
  *   - outputs[1]: Array to store the selected output value
  *
  * Member Functions:
- *   - Logical_Selector(uint16_t unique_id = 0): Constructor for Logical_Selector, initializes the object with a unique ID.
- *   - virtual uint8_t run() override: Executes the logical selection operation and updates the output array.
+ *   - Logic_Selector(uint16_t unique_id = 0): Constructor for Logic_Selector, initializes the object with a unique ID.
+ *   - virtual uint8_t run() override: Executes the Logic selection operation and updates the output array.
  *   - float select(): Selects the output value based on the selector value and input values.
  *
  * Usage:
- *   - Create an instance of Logical_Selector, set input values using inputs[], and call run() to perform
- *     the logical selection operation.
+ *   - Create an instance of Logic_Selector, set input values using inputs[], and call run() to perform
+ *     the Logic selection operation.
  *
  * Example:
  *   ```
- *   Logical_Selector selectorBlock();
+ *   Logic_Selector selectorBlock();
  *   selectorBlock.setInput(0, 1.0) // First input value
  *   selectorBlock.setInput(1, 2.0) // Second input value
  *   selectorBlock.setInput(2, 1.0) // Selector value
@@ -46,7 +46,7 @@
  *
  */
 
-class Logical_Selector : public FunctionBlock
+class Logic_Selector : public FunctionBlock
 {
 private:
   static const uint8_t INPUT_LENGTH = 3;
@@ -55,12 +55,12 @@ private:
   float inputConstants[3] = {0};
   float outputs[1] = {0};
 
-  float select(); // Perform the logical selection operation
+  float select(); // Perform the Logic selection operation
 
 public:
-  Logical_Selector(uint16_t unique_id = 0);
+  Logic_Selector(uint16_t unique_id = 0);
 
   virtual uint8_t run() override;
 };
 
-#endif // LOGICAL_SELECTOR_H
+#endif // Logic_SELECTOR_H

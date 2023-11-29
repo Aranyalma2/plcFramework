@@ -12,7 +12,7 @@ class OR_Tester : public FunctionBlockTest
   static bool test1()
   {
     // test1
-    Logical_OR obj;
+    Logic_OR obj;
     obj.setInput(0, 1);
     obj.setInput(1, 1);
     obj.run();
@@ -20,7 +20,7 @@ class OR_Tester : public FunctionBlockTest
   }
   static bool test2()
   {
-    Logical_OR obj;
+    Logic_OR obj;
     obj.setInput(0, 1);
     obj.setInput(1, 0);
     obj.run();
@@ -28,7 +28,7 @@ class OR_Tester : public FunctionBlockTest
   }
   static bool test3()
   {
-    Logical_OR obj;
+    Logic_OR obj;
     obj.setInput(0, 0);
     obj.setInput(1, 0.01);
     obj.run();
@@ -36,7 +36,7 @@ class OR_Tester : public FunctionBlockTest
   }
   static bool test4()
   {
-    Logical_OR obj;
+    Logic_OR obj;
     obj.setInput(0, 0.000001);
     obj.setInput(1, 0);
     obj.run();
@@ -48,7 +48,7 @@ public:
   String test()
   {
     setTests(number_of_tests, testFunctions);
-    return FunctionBlockTest::runTests("Logical_OR");
+    return FunctionBlockTest::runTests("Logic_OR");
   }
 };
 

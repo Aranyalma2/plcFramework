@@ -46,11 +46,11 @@
  * Example:
  *   ```
  *   Math_Basic mathBlock(123);
- *   mathBlock.inputs[0] = 5.0;
- *   mathBlock.inputs[1] = 3.0;
- *   mathBlock.inputs[2] = 0; // Addition
+ *   mathBlock.setInput(0, 5.0);
+ *   mathBlock.setInput(1, 1.0);
+ *   mathBlock.setInput(2, 0); // Addition
  *   mathBlock.run();
- *   float result = mathBlock.outputs[0]; // Result will be 8.0
+ *  float result = mathBlock.getOutput(); // Result will be 6.0
  *   ```
  *
  */

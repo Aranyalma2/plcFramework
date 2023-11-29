@@ -2,56 +2,7 @@
    File: Math_Basic.cpp
    Author: Nemeth Balint
 
-   Description:
-   This file defines the implementation of the Math_Basic class, which is a subclass of FunctionBlock.
-   It provides basic mathematical operations such as addition, subtraction, multiplication, division,
-   absolute value, exponentiation, logarithms, maximum, and minimum.
-
-   Class Overview:
-   - Math_Basic: Handles various mathematical operations based on the input parameters.
-                 Inherits from FunctionBlock.
-
-   Member Functions:
-   - Math_Basic(uint16_t unique_id): Constructor initializes the Math_Basic object with a unique ID,
-                                     sets up input and output arrays.
-
-   - float math(): Performs the mathematical operation based on the specified operation code.
-                   Returns the result of the operation.
-
-   - uint8_t run(): Checks the validity of inputs and executes the mathematical operation.
-                   Updates the output array with the result.
-
-   Supported Operations (specified by *inputs[2]):
-   0: Addition
-   1: Subtraction
-   2: Multiplication
-   3: Division (handles division by zero)
-   4: Absolute value
-   5: Exponentiation (base raised to the power exponent)
-   6: nth root (exponentiation with 1/n as the exponent)
-   7: Logarithm (B to the base A)
-   8: Maximum of two values
-   9: Minimum of two values
-
-   Note: If the specified operation code is not recognized, the default return value is 0.0.
-
-   Dependencies:
-   - FunctionBlock: Base class providing the structure for function blocks.
-
-   Usage:
-   - Create an instance of Math_Basic, set input values using inputs[], and call run() to perform
-     the specified mathematical operation.
-
-   Example:
-   ```
-    Math_Basic mathBlock();
-    mathBlock.inputs[0] = 5.0;
-    mathBlock.inputs[1] = 3.0;
-    mathBlock.inputs[2] = 0; // Addition
-    mathBlock.run();
-    float result = mathBlock.outputs[0]; // Result will be 8.0
-    ```
-
+   Implementation for: Math_Basic.h
 */
 
 #include "Math_Basic.h"

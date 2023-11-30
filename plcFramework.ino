@@ -7,6 +7,8 @@ OR_Tester t2;
 Counter_Tester t3;
 
 Math_Basic m1;
+Math_Map m2;
+Math_Limiter m3;
 
 ModbusRTUSlave s1(0, 115200, 1, 255);
 VIRIO_ModbusSlave_Out o1(0, &s1);

@@ -21,5 +21,7 @@
 #include "blocks/Logic/Logic_Selector.h"
 #include "blocks/Controller/Controller_PID.h"
 #include "blocks/Math/Math_Basic.h"
+#include "blocks/Math/Math_Map.h"
+#include "blocks/Math/Math_Limiter.h"
 
 #endif

@@ -10,6 +10,8 @@ Math_Basic m1;
 Math_Map m2;
 Math_Limiter m3;
 
+FunctionBlock *blocks[3] = {&m1, &m2, &m3};
+
 ModbusRTUSlave s1(0, 115200, 1, 255);
 VIRIO_ModbusSlave_Out o1(0, &s1);
 VIRIO_ModbusSlave_In o2(0, &s1);
@@ -47,6 +49,10 @@ void setup()
   s1.run();
 
   Serial.println("END");
+
+  Serial.println(*blocks[0]->getOutput());
+  Serial.println(*blocks[1]->getOutput());
+  Serial.println(*blocks[2]->getOutput());
 }
 
 void loop()

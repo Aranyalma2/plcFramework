@@ -5,7 +5,7 @@ VIRIO_ModbusSlave_In::VIRIO_ModbusSlave_In(uint16_t unique_id, SerialInterface *
   interface = connecedtIf;
   if (connecedtIf == nullptr)
     return;
-  interface->increeseInput();
+  interface->increaseInput();
 }
 
 void VIRIO_ModbusSlave_In::read()

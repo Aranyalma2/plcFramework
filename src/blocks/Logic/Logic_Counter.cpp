@@ -24,13 +24,13 @@ float Logic_Counter::counter()
   uint8_t resetState = this->castToLogic(*inputs[4]);
   uint8_t resetDetectionMode = this->castToLogic(*inputs[5]);
 
-  /*
+  
     // Initialization on the first run
     if (firstRun)
     {
       // Initialize with the default value
       outputs[0] = *inputs[2];
-
+    firstRun = 0;}/*
       // If the input or reset detection mode is high to low, change last states to inverse
       if (inputDetectionMode == 1)
       {
@@ -43,6 +43,28 @@ float Logic_Counter::counter()
       firstRun = 0; // Set firstRun flag to false after initialization
     }
     */
+
+     // Reset check
+  if (resetState != lastReset)
+  {
+    if (resetDetectionMode == 1)
+    { // High to low
+      if (lastReset == 1 && resetState == 0)
+      {
+        lastReset = resetState;
+        return *inputs[2]; // Reset the counter
+      }
+    }
+    else
+    { // Low to high
+      if (lastReset == 0 && resetState == 1)
+      {
+        lastReset = resetState;
+        return *inputs[2]; // Reset the counter
+      }
+    }
+    lastReset = resetState;
+  }
 
   // Check if the input value has changed since the last time
   if (inputState != lastInput)
@@ -64,29 +86,7 @@ float Logic_Counter::counter()
         return outputs[0] + *inputs[3]; // Increment the counter
       }
     }
-    lastInput = inputState; // Update lastInput with the current input state
-  }
-
-  // Reset check
-  if (resetState != lastReset)
-  {
-    if (resetDetectionMode == 1)
-    { // High to low
-      if (lastReset == 1 && resetState == 0)
-      {
-        lastReset = resetState;
-        return *inputs[2]; // Reset the counter
-      }
-    }
-    else
-    { // Low to high
-      if (lastReset == 0 && resetState == 1)
-      {
-        lastReset = resetState;
-        return *inputs[2]; // Reset the counter
-      }
-    }
-    lastInput = inputState; // Update lastInput with the current input state
+    lastInput = inputState;
   }
 
   return outputs[0]; // Return the current counter value

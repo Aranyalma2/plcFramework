@@ -46,6 +46,5 @@ private:
   boolean holdingRegisterWrite(word address, word value);
   long inputRegisterRead(word address) { return 0; }
 
-  bool firstRun = true;
 };
 #endif // __MODBUSRTUSLAVE_H__

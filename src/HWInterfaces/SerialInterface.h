@@ -51,10 +51,6 @@ public:
       firstRun = false;
       return false;
     }
-    else if (idxInput != numberOfInput && idxOutput != numberOfOutput)
-    {
-      return false;
-    }
     return true;
   }
 };

@@ -9,16 +9,15 @@ ModbusRTUSlave::ModbusRTUSlave(uint8_t serialId, uint32_t baudrate, uint8_t slav
 
 void ModbusRTUSlave::run()
 {
-  if (!firstRun)
+  if (initFinished())
   {
     ModbusRTUSlave::poll();
     return;
   }
-  else if (initFinished())
+  else
   {
     usedSerial->begin(baudrate);
     ModbusRTUSlave::begin();
-    firstRun = false;
     return;
   }
 }

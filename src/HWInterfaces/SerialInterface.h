@@ -42,17 +42,7 @@ public:
     idxOutput++;
   }
 
-  bool initFinished()
-  {
-    if (firstRun)
-    {
-      inputBlocks = new FunctionBlock *[numberOfInput];
-      outputBlocks = new FunctionBlock *[numberOfOutput];
-      firstRun = false;
-      return false;
-    }
-    return true;
-  }
+  bool initFinished();
 };
 
 #endif // __SERIALINTERFACE_H__

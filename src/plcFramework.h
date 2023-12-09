@@ -24,4 +24,7 @@
 #include "blocks/Math/Math_Map.h"
 #include "blocks/Math/Math_Limiter.h"
 
+#include "HWInterfaces/SerialInterface.h"
+#include "HWInterfaces/ModbusRTUSlave.h"
+
 #endif

@@ -5,7 +5,7 @@ VIRIO_ModbusSlave_Out::VIRIO_ModbusSlave_Out(uint16_t unique_id, SerialInterface
   interface = connecedtIf;
   if (connecedtIf == nullptr)
     return;
-  interface->increeseOutput();
+  interface->increaseOutput();
 }
 
 void VIRIO_ModbusSlave_Out::write()

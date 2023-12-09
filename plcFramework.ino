@@ -1,6 +1,5 @@
 #include "src/plcFramework.h"
 #include "tests/Blocktest.h"
-#include "src/HWInterfaces/ModbusRTUSlave.h"
 
 AND_Tester t1;
 OR_Tester t2;

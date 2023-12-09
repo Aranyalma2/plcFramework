@@ -27,8 +27,8 @@ public:
     baudrate = _baudrate;
   };
 
-  void increeseInput() { numberOfInput++; }
-  void increeseOutput() { numberOfOutput++; }
+  void increaseInput() { numberOfInput++; }
+  void increaseOutput() { numberOfOutput++; }
 
   void addInputBlock(FunctionBlock *block)
   {

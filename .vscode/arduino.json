@@ -1,6 +1,0 @@
-{
-    "board": "arduino:avr:nano",
-    "sketch": "plcFramework.ino",
-    "port": "COM3",
-    "configuration": "cpu=atmega328"
-}

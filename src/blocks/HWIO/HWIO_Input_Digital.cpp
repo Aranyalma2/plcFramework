@@ -16,21 +16,21 @@ HWIO_Input_Digital::HWIO_Input_Digital(uint16_t unique_id) : FunctionBlock(uniqu
 
 float HWIO_Input_Digital::input()
 {
-  if (lastPinMode != static_cast<uint8_t>(*inputs[0]))
+  if (lastPinMode != static_cast<uint8_t>(*inputs[1]))
   {
-    lastPinMode = *inputs[0];
+    lastPinMode = *inputs[1];
     switch (lastPinMode)
     {
     case 0:
-      pinMode(unique_id, INPUT);
+      pinMode(static_cast<uint16_t>(*inputs[0]), INPUT);
       break;
     case 1:
-      pinMode(unique_id, INPUT_PULLUP);
+      pinMode(static_cast<uint16_t>(*inputs[0]), INPUT_PULLUP);
       break;
     }
   }
 
-  return static_cast<float>(digitalRead(unique_id));
+  return static_cast<float>(digitalRead(static_cast<uint16_t>(*inputs[0])));
 }
 
 uint8_t HWIO_Input_Digital::run()

@@ -16,7 +16,7 @@ void HWIO_Output_PWM::write()
 {
   float range = *inputs[3] - *inputs[2];
   uint16_t out = static_cast<uint16_t>(*inputs[1] * PWM_DUTY / range);
-  analogWrite(*inputs[0], out);
+  analogWrite(static_cast<uint16_t>(*inputs[0]), out);
 }
 
 uint8_t HWIO_Output_PWM::run()

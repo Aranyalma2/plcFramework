@@ -12,7 +12,7 @@ HWIO_Output_Digital::HWIO_Output_Digital(uint16_t unique_id) : FunctionBlock(uni
 
 void HWIO_Output_Digital::write()
 {
-  digitalWrite(unique_id, static_cast<uint16_t>(*inputs[0]));
+  digitalWrite(static_cast<uint16_t>(*inputs[0]), static_cast<uint16_t>(*inputs[1]));
 }
 
 uint8_t HWIO_Output_Digital::run()
